@@ -1,0 +1,156 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'threapist_model.dart';
+export 'threapist_model.dart';
+
+class ThreapistWidget extends StatefulWidget {
+  const ThreapistWidget({Key? key}) : super(key: key);
+
+  @override
+  _ThreapistWidgetState createState() => _ThreapistWidgetState();
+}
+
+class _ThreapistWidgetState extends State<ThreapistWidget> {
+  late ThreapistModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => ThreapistModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    _unfocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      appBar: AppBar(
+        backgroundColor: Color(0xFF70C3D9),
+        automaticallyImplyLeading: false,
+        actions: [],
+        centerTitle: false,
+        elevation: 2,
+      ),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          child: Stack(
+            children: [
+              Align(
+                alignment: AlignmentDirectional(0, -0.61),
+                child: Container(
+                  width: 250,
+                  height: 250,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(
+                    'assets/images/aualz_r.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.4, 0.15),
+                child: Image.asset(
+                  'assets/images/star_(1).png',
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.2, 0.15),
+                child: Image.asset(
+                  'assets/images/star_(1).png',
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(-0.4, 0.15),
+                child: Image.asset(
+                  'assets/images/star.png',
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0, 0.15),
+                child: Image.asset(
+                  'assets/images/star.png',
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(-0.2, 0.15),
+                child: Image.asset(
+                  'assets/images/star.png',
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(-0.82, 0.3),
+                child: Text(
+                  'Feedback',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.02, 0.59),
+                child: Container(
+                  width: 337.1,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Color(0x00FFFFFF),
+                  ),
+                  child: Text(
+                    'Thank you for being such an amazing therapist. He has made a significant impact on my life, and I will always be grateful for the time we spent together',
+                    style: FlutterFlowTheme.of(context).bodyMedium,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0, 0.03),
+                child: Text(
+                  'Ahmed Ashraf',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
